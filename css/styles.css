@@ -51,12 +51,13 @@ thead th {
   font-weight: 500;
   padding-bottom: 0.8rem;
   text-align: left; }
-  thead th.status, thead th.subject {
-    width: 12%; }
-  thead th.title {
-    width: 30%; }
   thead th a {
     padding-left: 0.3rem; }
+  @media only screen and (min-width: 1440px) {
+    thead th.status, thead th.subject {
+      width: 12%; }
+    thead th.title {
+      width: 30%; } }
 
 tbody {
   background-color: #fff; }
@@ -111,19 +112,39 @@ input[type=checkbox] {
   font-size: 1.3rem;
   letter-spacing: 0.025rem;
   line-height: 3.6rem;
-  padding: 0 2rem;
-  position: absolute;
-  right: 0;
+  margin: 1rem 0;
+  text-align: center;
   text-transform: uppercase;
-  top: 0; }
+  width: 100%; }
   .createNew:hover {
     background-color: #0e4e65; }
+  @media only screen and (min-width: 425px) {
+    .createNew {
+      width: 50%; } }
+  @media only screen and (min-width: 768px) {
+    .createNew {
+      margin: 0;
+      padding: 0 2rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto; } }
 
-.filters > div {
-  display: inline-block;
-  margin-left: 2rem; }
-  .filters > div:first-child {
-    margin-left: 0; }
+.filters {
+  margin: 2.5rem 0 1.5rem; }
+  .filters div:not(.options) {
+    display: inline-block;
+    margin-left: 2rem; }
+    .filters div:not(.options):first-child {
+      margin-left: 0; }
+  .filters .options {
+    margin-top: 2.5rem; }
+  @media only screen and (min-width: 768px) {
+    .filters {
+      margin: 0; }
+      .filters .options {
+        display: inline-block;
+        margin: 0 0 0 2rem; } }
 
 .dropdown {
   cursor: pointer;
@@ -153,23 +174,33 @@ input[type=checkbox] {
   .dropdown .fa-caret-down {
     padding-left: 0.5rem; }
 
+.tableOptions > * {
+  text-align: center; }
+  @media only screen and (min-width: 768px) {
+    .tableOptions > * {
+      text-align: left; } }
 .tableOptions ol, .tableOptions li {
   display: inline-block; }
-.tableOptions .itemCount {
-  float: left; }
-  .tableOptions .itemCount li {
-    margin: 0 0.8rem; }
-    .tableOptions .itemCount li.active {
-      background-color: #d2e5eb;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      color: #1782a8;
-      padding: 0.7rem;
-      text-align: center;
-      width: 1.9rem; }
+@media only screen and (min-width: 768px) {
+  .tableOptions .itemCount {
+    float: left; } }
+.tableOptions .itemCount li {
+  margin: 0 0.8rem; }
+  .tableOptions .itemCount li.active {
+    background-color: #d2e5eb;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    color: #1782a8;
+    padding: 0.7rem;
+    text-align: center;
+    width: 1.9rem; }
 .tableOptions .pagination {
-  float: right; }
+  margin: 1.5rem 0; }
+  @media only screen and (min-width: 768px) {
+    .tableOptions .pagination {
+      float: right;
+      margin: 0; } }
   .tableOptions .pagination li {
     font-size: 1.6rem;
     line-height: 2.5rem;

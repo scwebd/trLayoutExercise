@@ -1,7 +1,13 @@
+// colors
 $red: #ff0000
 $white: #fff
 $teal: #1782a8
 $slate: #5b5b5b
+
+// breakpoints
+$tablet: 768px
+$midMobile: 425px
+$largeDesktop: 1440px
 
 html
 	font-size: 62.5%
@@ -52,12 +58,14 @@ thead
 		font-weight: 500
 		padding-bottom: .8rem
 		text-align: left
-		&.status, &.subject
-			width: 12%
-		&.title
-			width: 30%
 		a
-			padding-left: .3rem		
+			padding-left: .3rem
+		// Letting columns flow based on content width, but setting widths for larger desktop views
+		@media only screen and (min-width: $largeDesktop)
+			&.status, &.subject
+				width: 12%
+			&.title
+				width: 30%		
 tbody
 	background-color: $white
 	td
@@ -106,19 +114,37 @@ input[type=checkbox]
 	font-size: 1.3rem
 	letter-spacing: .025rem
 	line-height: 3.6rem
-	padding: 0 2rem
-	position: absolute
-	right: 0
+	margin: 1rem 0
+	text-align: center
 	text-transform: uppercase
-	top: 0
+	width: 100%
 	&:hover
-		background-color: darken($teal, 15%)	
+		background-color: darken($teal, 15%)
+	@media only screen and (min-width: $midMobile)
+		width: 50%
+	@media only screen and (min-width: $tablet)
+		margin: 0
+		padding: 0 2rem
+		position: absolute
+		right: 0
+		top: 0
+		width: auto
 .filters
-	> div
+	margin: 2.5rem 0 1.5rem
+	div:not(.options)
 		display: inline-block
 		margin-left: 2rem
 		&:first-child
 			margin-left: 0
+	.options
+		margin-top: 2.5rem
+	@media only screen and (min-width: $tablet)
+		margin: 0
+		.options
+			display: inline-block
+			margin: 0 0 0 2rem		
+		
+
 // 'All' dropdowns above the table	
 .dropdown
 	cursor: pointer
@@ -150,10 +176,15 @@ input[type=checkbox]
 		padding-left: .5rem			
 // Item count and pagination below the table
 .tableOptions
+	& > *
+		text-align: center
+		@media only screen and (min-width: $tablet)
+			text-align: left
 	ol, li
 		display: inline-block
 	.itemCount
-		float: left
+		@media only screen and (min-width: $tablet)
+			float: left
 		li
 			margin: 0 .8rem
 			&.active
@@ -166,7 +197,10 @@ input[type=checkbox]
 				text-align: center
 				width: 1.9rem
 	.pagination
-		float: right
+		margin: 1.5rem 0
+		@media only screen and (min-width: $tablet)
+			float: right
+			margin: 0
 		li
 			font-size: 1.6rem
 			line-height: 2.5rem		
