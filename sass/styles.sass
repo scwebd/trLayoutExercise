@@ -38,6 +38,8 @@ h1
 	margin-bottom: 1.2rem
 	text-transform: uppercase
 table
+	border-collapse: collapse
+	border-spacing: 0
 	+box-shadow(0, 2px, 4px, 0, rgba(37, 37, 37, 0.2))
 	margin: 2rem 0
 	position: relative
@@ -56,9 +58,6 @@ table
 				padding: 0 0 0 2rem
 			@media only screen and (min-width: $tablet)
 				padding: 0 0 0 5rem
-	th:first-child
-		padding-bottom: 0.8rem
-
 	&:after
 		content: ''
 		left: 0
@@ -83,7 +82,7 @@ thead
 	display: none
 	@media only screen and (min-width: $lgMobile)
 		display: table-header-group
-	th
+	th, th:first-child
 		font-weight: 500
 		padding-bottom: .8rem
 		text-align: left
@@ -98,7 +97,7 @@ thead
 tbody
 	background-color: $white
 	tr
-		// I did this display and positioning mumbo jumbo to get the remove 'x' placed for mobile view... feeling a bit 'meh' about it
+		// I tweaked these display and positioning properties to get the remove 'x' placed for mobile views... feeling a bit 'meh' about it
 		display: block
 		position: relative
 		@media only screen and (min-width: $lgMobile)
@@ -184,8 +183,6 @@ input[type=checkbox]
 		.options
 			display: inline-block
 			margin: 0 0 0 2rem		
-		
-
 // 'All' dropdowns above the table	
 .dropdown
 	cursor: pointer

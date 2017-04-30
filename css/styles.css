@@ -25,6 +25,8 @@ h1 {
   text-transform: uppercase; }
 
 table {
+  border-collapse: collapse;
+  border-spacing: 0;
   -webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2);
   -moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2);
   box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2);
@@ -49,8 +51,6 @@ table {
       @media only screen and (min-width: 768px) {
         table th:first-child, table td:first-child {
           padding: 0 0 0 5rem; } }
-  table th:first-child {
-    padding-bottom: 0.8rem; }
   table:after {
     content: "";
     left: 0;
@@ -81,16 +81,16 @@ thead {
   @media only screen and (min-width: 600px) {
     thead {
       display: table-header-group; } }
-  thead th {
+  thead th, thead th:first-child {
     font-weight: 500;
     padding-bottom: 0.8rem;
     text-align: left; }
-    thead th a {
+    thead th a, thead th:first-child a {
       padding-left: 0.3rem; }
     @media only screen and (min-width: 1440px) {
-      thead th.status, thead th.subject {
+      thead th.status, thead th.subject, thead th:first-child.status, thead th:first-child.subject {
         width: 12%; }
-      thead th.title {
+      thead th.title, thead th:first-child.title {
         width: 30%; } }
 
 tbody {
