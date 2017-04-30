@@ -49,6 +49,8 @@ table {
       @media only screen and (min-width: 768px) {
         table th:first-child, table td:first-child {
           padding: 0 0 0 5rem; } }
+  table th:first-child {
+    padding-bottom: 0.8rem; }
   table:after {
     content: "";
     left: 0;
