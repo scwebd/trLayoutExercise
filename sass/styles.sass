@@ -1,0 +1,176 @@
+$red: #ff0000
+$white: #fff
+$teal: #1782a8
+$slate: #5b5b5b
+
+html
+	font-size: 62.5%
+body
+	background-color: #eee
+	color: lighten($slate, 15%)
+	font: 400 14px 'Open Sans', sans-serif
+	font-size: 1.4rem
+a
+	color: $teal
+	text-decoration: none
+	&:hover, &:active
+		color: darken($teal, 15%)
+i
+	&.fa span
+		display: none
+h1
+	color: $slate
+	font-size: 2.6rem
+	font-weight: 500
+	margin-bottom: 1.2rem
+	text-transform: uppercase
+table
+	margin: 2rem 0
+	position: relative
+	width: 100%
+	th, td
+		&:first-child
+			padding-left: 5rem
+	&:after
+		content: ''
+		position: absolute
+		-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+		-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+		box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+		left: 0
+		right: 0
+		top: 2.7rem
+		bottom: 0
+		z-index: -1
+	.remove i
+		color: #ff0000
+		font-size: 2rem
+		&:hover
+			color: darken($red, 15%)
+thead
+	th
+		font-weight: 500
+		padding-bottom: .8rem
+		text-align: left
+		&.status, &.subject
+			width: 12%
+		&.title
+			width: 30%
+		a
+			padding-left: .3rem		
+tbody
+	background-color: $white
+	td
+		border-top: 1px solid #e9e9e9
+		padding: 1.3rem 0
+		&:last-child
+			padding-right: 2rem
+			text-align: right			
+th
+	text-transform: uppercase
+	i
+		color: #d9d9d9
+		&:hover
+			color: $teal	
+ul, ol
+	list-style-type: none
+	margin: 0
+	padding: 0
+input[type=checkbox]
+	display: none
+	+ label:before
+		color: $teal
+		content: "\f096"
+		display: inline-block
+		font-size: 1.8rem
+		font-family: FontAwesome
+		letter-spacing: 10px
+		vertical-align: middle
+	&:checked + label:before
+		content: "\f14a"
+		letter-spacing: 9px
+.clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+.container
+	margin: 0 auto
+	position: relative
+	max-width: 1310px
+.createNew
+	background-color: $teal
+	border: 0
+	color: $white
+	cursor: pointer
+	font-size: 1.3rem
+	letter-spacing: .025rem
+	line-height: 3.6rem
+	padding: 0 2rem
+	position: absolute
+	right: 0
+	text-transform: uppercase
+	top: 0
+	&:hover
+		background-color: darken($teal, 15%)	
+.filters
+	> div
+		display: inline-block
+		margin-left: 2rem
+		&:first-child
+			margin-left: 0
+// 'All' dropdowns above the table	
+.dropdown
+	cursor: pointer
+	position: relative
+	ul
+		background-color: $white
+		-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+		-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+		box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)		
+		display: none
+		left: 0
+		padding: .5rem 1rem
+		position: absolute
+		top: 2rem
+		width: 8rem
+		z-index: 1
+	li
+		padding: .5rem
+	&:hover
+		ul
+			display: block
+		> span
+			color: darken($teal, 15%)
+	> span
+		border-bottom: 1px solid $teal
+		color: $teal
+		padding-bottom: .4rem
+	.fa-caret-down
+		padding-left: .5rem			
+// Item count and pagination below the table
+.tableOptions
+	ol, li
+		display: inline-block
+	.itemCount
+		float: left
+		li
+			margin: 0 .8rem
+			&.active
+				background-color: #d2e5eb
+				-webkit-border-radius: 50%
+				-moz-border-radius: 50%
+				border-radius: 50%
+				color: $teal
+				padding: .7rem
+				text-align: center
+				width: 1.9rem
+	.pagination
+		float: right
+		li
+			font-size: 1.6rem
+			line-height: 2.5rem		
+			padding: 0 1.5rem
+			&:not(.numeric)
+				font: 500 2.5rem 'Roboto', sans-serif
+

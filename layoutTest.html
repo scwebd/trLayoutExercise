@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Table-Based Layout Test</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700|Roboto:500" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">		
+		<script src="https://use.fontawesome.com/0fde7fb4fa.js"></script>
+	</head>
+	<body>
+		<div class="container">	
+			<h1>Table-Based Layout Test</h1>
+			<button class="createNew">Create New</button>
+			<p>Just a simple little layout test.</p>
+			<div class="filters">
+				<div class="dropdown">
+					<span>All <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+				    <ul>
+						<li><a href="#">Item 1</a></li>
+						<li><a href="#">Item 2</a></li>
+						<li><a href="#">Item 3</a></li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<span>All <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+				    <ul>
+						<li><a href="#">Item 1</a></li>
+						<li><a href="#">Item 2</a></li>
+						<li><a href="#">Item 3</a></li>
+					</ul>
+				</div>
+				<div>
+					<input id="option1" type="checkbox" />
+					<label for="option1">Option 1</label>
+				</div>
+				<div>			
+					<input id="option2" type="checkbox" />
+					<label for="option2">Option 2</label>
+				</div>
+				<div>	
+					<input id="option3" type="checkbox" checked="checked" />
+					<label for="option3">Option 3</label>
+				</div>
+			</div>
+			<table cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<th class="status">Status <a href="#"><i class="fa fa-sort" aria-hidden="true"><span>Sort by Status</span></i></a></th>
+						<th class="subject">Subject <a href="#"><i class="fa fa-sort" aria-hidden="true"><span>Sort by Subject</span></i></a></th>
+						<th class="title">Title <a href="#"><i class="fa fa-sort" aria-hidden="true"><span>Sort by Title</span></i></a></th>
+						<th class="description">Description <a href="#"><i class="fa fa-sort" aria-hidden="true"><span>Sort by Description</span></i></a></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Active</td>
+						<td>Test</td>
+						<td><a href="#">Test Title</a></td>
+						<td>Test Description</td>
+						<td><a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"><span>Remove Row</span></i></a></td>
+					</tr>
+					<tr>
+						<td>Active</td>
+						<td>Test</td>
+						<td><a href="#">Test Title</a></td>
+						<td>Test Description</td>
+						<td><a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"><span>Remove Row</span></i></a></td>
+					</tr>
+					<tr>
+						<td>Active</td>
+						<td>Test</td>
+						<td><a href="#">Test Title</a></td>
+						<td>Test Description</td>
+						<td><a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"><span>Remove Row</span></i></a></td>
+					</tr>
+					<tr>
+						<td>Active</td>
+						<td>Test</td>
+						<td><a href="#">Test Title</a></td>
+						<td>Test Description</td>
+						<td><a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"><span>Remove Row</span></i></a></td>
+					</tr>
+					<tr>
+						<td>Active</td>
+						<td>Test</td>
+						<td><a href="#">Test Title</a></td>
+						<td>Test Description</td>
+						<td><a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"><span>Remove Row</span></i></a></td>
+					</tr>				
+				</tbody>
+			</table>
+			<div class="tableOptions clearfix">
+				<div class="itemCount">
+					Items per page
+					<ol>
+						<li class="active">5</li>
+						<li><a href="#">10</a></li>
+						<li><a href="#">100</a></li>
+					</ol>
+				</div>
+				<nav class="pagination">
+					Showing 10 - 15 of 100
+					<ol>
+						<li><a href="#">&laquo;</a></li>
+						<li><a href="#">&lsaquo;</a></li>
+						<li class="numeric"><a href="#">3</a></li>
+						<li><a href="#">&rsaquo;</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ol>	
+				</nav>
+			</div>
+		</div>
+	</body>
+</html>
