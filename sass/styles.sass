@@ -6,8 +6,9 @@ $slate: #5b5b5b
 
 // breakpoints
 $tablet: 768px
-$midMobile: 425px
-$largeDesktop: 1440px
+$mdMobile: 425px
+$lgMobile: 600px
+$lgDesktop: 1440px
 
 html
 	font-size: 62.5%
@@ -31,29 +32,52 @@ h1
 	margin-bottom: 1.2rem
 	text-transform: uppercase
 table
+	-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+	-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+	box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
 	margin: 2rem 0
 	position: relative
 	width: 100%
+	@media only screen and (min-width: $lgMobile)
+		-webkit-box-shadow: none
+		-moz-box-shadow: none
+		box-shadow: none
 	th, td
+		display: block
+		@media only screen and (min-width: $lgMobile)
+			display: table-cell
 		&:first-child
-			padding-left: 5rem
+			padding-top: 1rem
+			@media only screen and (min-width: $lgMobile)
+				padding: 0 0 0 2rem
+			@media only screen and (min-width: $tablet)
+				padding: 0 0 0 5rem
 	&:after
 		content: ''
-		position: absolute
-		-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-		-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-		box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
 		left: 0
 		right: 0
 		top: 2.7rem
 		bottom: 0
 		z-index: -1
+		@media only screen and (min-width: $lgMobile)
+			position: absolute
+			-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+			-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+			box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
 	.remove i
 		color: #ff0000
 		font-size: 2rem
+		position: absolute
+		right: 1rem
+		top: 1rem
+		@media only screen and (min-width: $lgMobile)
+			position: static
 		&:hover
 			color: darken($red, 15%)
 thead
+	display: none
+	@media only screen and (min-width: $lgMobile)
+		display: table-header-group
 	th
 		font-weight: 500
 		padding-bottom: .8rem
@@ -61,16 +85,28 @@ thead
 		a
 			padding-left: .3rem
 		// Letting columns flow based on content width, but setting widths for larger desktop views
-		@media only screen and (min-width: $largeDesktop)
+		@media only screen and (min-width: $lgDesktop)
 			&.status, &.subject
 				width: 12%
 			&.title
 				width: 30%		
 tbody
 	background-color: $white
+	tr
+		// I did this display and positioning mumbo jumbo to get the remove 'x' placed for mobile view... feeling a bit 'meh' about it
+		display: block
+		position: relative
+		@media only screen and (min-width: $lgMobile)
+			display: table-row
+		&:nth-child(even)
+			background-color: lighten($teal, 60%)
+			@media only screen and (min-width: $lgMobile)
+				background-color: $white	
 	td
-		border-top: 1px solid #e9e9e9
-		padding: 1.3rem 0
+		padding: .5rem 1rem
+		@media only screen and (min-width: $lgMobile)
+			border-top: 1px solid #e9e9e9
+			padding: 1.3rem 0
 		&:last-child
 			padding-right: 2rem
 			text-align: right			
@@ -120,7 +156,7 @@ input[type=checkbox]
 	width: 100%
 	&:hover
 		background-color: darken($teal, 15%)
-	@media only screen and (min-width: $midMobile)
+	@media only screen and (min-width: $mdMobile)
 		width: 50%
 	@media only screen and (min-width: $tablet)
 		margin: 0
