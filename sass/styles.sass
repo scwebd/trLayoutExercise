@@ -10,6 +10,12 @@ $mdMobile: 425px
 $lgMobile: 600px
 $lgDesktop: 1440px
 
+// mixins
+=box-shadow($top, $left, $blur, $spread, $color)
+	-webkit-box-shadow: $top $left $blur $spread $color
+	-moz-box-shadow: $top $left $blur $spread $color
+	box-shadow: $top $left $blur $spread $color
+
 html
 	font-size: 62.5%
 body
@@ -32,9 +38,7 @@ h1
 	margin-bottom: 1.2rem
 	text-transform: uppercase
 table
-	-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-	-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-	box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+	+box-shadow(0, 2px, 4px, 0, rgba(37, 37, 37, 0.2))
 	margin: 2rem 0
 	position: relative
 	width: 100%
@@ -61,9 +65,7 @@ table
 		z-index: -1
 		@media only screen and (min-width: $lgMobile)
 			position: absolute
-			-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-			-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-			box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
+			+box-shadow(0, 2px, 4px, 0, rgba(37, 37, 37, 0.2))
 	.remove i
 		color: #ff0000
 		font-size: 2rem
@@ -187,9 +189,7 @@ input[type=checkbox]
 	position: relative
 	ul
 		background-color: $white
-		-webkit-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-		-moz-box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)
-		box-shadow: 0 2px 4px 0 rgba(37, 37, 37, 0.2)		
+		+box-shadow(0, 2px, 4px, 0, rgba(37, 37, 37, 0.2))		
 		display: none
 		left: 0
 		padding: .5rem 1rem
